@@ -7,12 +7,12 @@ const EventDetailScreen = ({ route }: any) => {
 
     const { item } = route.params
     return (<>
-    <View style={{borderColor: 'black'}}>
-        <Card key={item.id}>
+    <View style={{borderColor: 'black',paddingBottom:150}}>
+        <Card style={styles.card} key={item.id}>
             <Card.Cover source={{ uri: item.image }} />
             <Text style={styles.text}>{item.category}</Text>
             <Card.Title titleStyle={styles.title} title={item.name} subtitleStyle={styles.subtitle} subtitle={item.date} />
-            <Card.Content>
+            <Card.Content style={{paddingBottom:150}}>
                 <Text style={styles.paragraph}>{item.description}</Text>
                 <Text style={styles.text}>{item.place}</Text>
                 <Text style={styles.text}>{item.city}</Text>
@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
     color:'#b0c4de',
     fontSize:20,
     fontWeight:'bold',
+  },
+  card:
+  {
+    backgroundColor:'gainsboro'
   }
   })
 
